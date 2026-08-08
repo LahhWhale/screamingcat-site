@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>$SCAT | Screaming Cat | The OG Meme That Never Got Its Run</title>
+<meta name="description" content="Screaming Cat: the official pfp of r/memes. $SCAT | every trencher's spirit animal. Fees fund buybacks, listings, and community requests.">
+<meta property="og:title" content="$SCAT | Screaming Cat">
+<meta property="og:description" content="The OG meme that never got its proper run. Official r/memes pfp. BILLIONS will scream.">
+<meta property="og:image" content="banner-og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon-cat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#130E0B;
+    --bg-alt:#1A130F;
+    --card:#211712;
+    --card-2:#2A1E17;
+    --line: rgba(255,240,220,0.10);
+    --line-soft: rgba(255,240,220,0.07);
+    --amber:#FFA733;
+    --amber-bright:#FFC968;
+    --amber-dim: rgba(255,167,51,0.14);
+    --amber-line: rgba(255,167,51,0.32);
+    --scream:#FF5C3D;
+    --check:#7CE0A0;
+    --text:#F8F1E7;
+    --text-dim:#B9A999;
+    --text-faint:#6E5F52;
+    --shadow: 0 26px 60px -24px rgba(0,0,0,0.65);
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:26px;
+    --display:'Archivo Black', 'Inter', sans-serif;
+    --heading:'Inter', sans-serif;
+    --body:'Inter', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  ::selection{background:var(--amber); color:#130E0B;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    overflow-x:hidden;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(circle at 88% 6%, rgba(255,167,51,0.10), transparent 34%),
+      radial-gradient(circle at 6% 70%, rgba(255,92,61,0.07), transparent 32%);
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 26px; position:relative; z-index:1;}
+  h1,h2{font-family:var(--display); letter-spacing:-0.01em; line-height:1.02; text-transform:uppercase;}
+  h3{font-family:var(--heading); font-weight:800; letter-spacing:-0.01em;}
+  .eyebrow{
+    display:flex; align-items:center; gap:8px; font-family:var(--mono);
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700;
+    color:var(--amber); margin-bottom:16px;
+  }
+  .eyebrow::before{content:"//"; color:var(--scream); font-weight:700;}
+  .eyebrow .paw{width:13px; height:13px;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:16px 28px; border-radius:10px; font-weight:800;
+    font-size:14.5px; letter-spacing:0.01em; text-transform:uppercase;
+    border:2px solid transparent; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    font-family:var(--heading); white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:active{transform:translateY(0) scale(0.96);}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--amber-bright), var(--amber));
+    color:#1A0E04; box-shadow:0 14px 32px -12px rgba(255,167,51,0.4);
+  }
+  .btn-primary:hover{box-shadow:0 18px 42px -12px rgba(255,167,51,0.55);}
+  .btn-outline{
+    border-color: var(--line); color:var(--text); background:var(--card);
+  }
+  .btn-outline:hover{border-color:var(--amber-line); background:var(--card-2);}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(19,14,11,0.86); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
+  .brand{display:flex; align-items:center; gap:10px; font-size:15.5px; font-weight:800; letter-spacing:0.01em; text-transform:uppercase; font-family:var(--heading);}
+  .brand img{width:34px; height:34px; border-radius:9px; object-fit:cover; border:1.5px solid var(--amber-line); animation:navBounce 3.6s ease-in-out infinite;}
+  @keyframes navBounce{
+    0%,100%{transform:translateY(0) rotate(0);}
+    50%{transform:translateY(-2px) rotate(-4deg);}
+  }
+  .brand .tick{color:var(--amber);}
+  .navlinks{display:flex; gap:28px; font-size:13.5px; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.02em;}
+  .navlinks a:hover{color:var(--amber);}
+  .navcta{display:flex; gap:10px; align-items:center;}
+  .navcta .btn{padding:11px 18px; font-size:12px;}
+  .burger{
+    display:none; width:40px; height:40px; border-radius:8px; border:1px solid var(--line);
+    background:var(--card); align-items:center; justify-content:center; cursor:pointer; flex-direction:column; gap:4px;
+  }
+  .burger span{display:block; width:18px; height:2px; background:var(--amber);}
+  .mobile-panel{
+    display:none; max-height:0; overflow:hidden; transition:max-height .28s ease;
+    border-top:1px solid var(--line-soft);
+  }
+  .mobile-panel.open{max-height:280px;}
+  .mobile-panel .wrap{padding:16px 26px 20px; display:flex; flex-direction:column; gap:4px;}
+  .mobile-panel a{
+    padding:12px 4px; font-size:14px; font-weight:700; text-transform:uppercase; color:var(--text-dim); border-bottom:1px solid var(--line-soft);
+  }
+  .mobile-panel .btn{margin-top:12px; justify-content:center;}
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .navcta .btn-outline{display:none;}
+    .burger{display:flex;}
+    .mobile-panel{display:block;}
+  }
+
+  section{padding:96px 0; position:relative; z-index:1;}
+  .section-head{max-width:600px; margin-bottom:42px;}
+  .section-head h2{font-size:clamp(28px,4vw,40px); margin-bottom:12px;}
+  .section-head p{color:var(--text-dim); font-size:15.5px; line-height:1.6;}
+
+  /* HALFTONE TEXTURE STRIP */
+  .halftone{
+    position:absolute; inset:0; pointer-events:none; opacity:0.5;
+    background-image: radial-gradient(var(--line) 1.1px, transparent 1.1px);
+    background-size: 14px 14px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 100% at 100% 0%, #000 0%, transparent 70%);
+    mask-image: radial-gradient(ellipse 60% 100% at 100% 0%, #000 0%, transparent 70%);
+  }
+
+  /* HERO */
+  .hero{padding:66px 0 78px; position:relative; overflow:hidden;}
+  .hero-inner{display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center; position:relative; z-index:1;}
+  @media (max-width:900px){ .hero-inner{grid-template-columns:1fr; gap:40px;} }
+  .hero h1{font-size:clamp(38px, 6.4vw, 68px); margin-bottom:18px;}
+  .hero h1 .scream{color:var(--amber); -webkit-text-stroke:0; display:inline-block; animation:screamGlow 2.2s ease-in-out infinite;}
+  .hero h1 .scream::after{content:"!";}
+  @keyframes screamGlow{
+    0%,100%{text-shadow:0 0 0 rgba(255,167,51,0);}
+    50%{text-shadow:0 0 22px rgba(255,167,51,0.55);}
+  }
+  .hero p.lead{font-size:16.5px; color:var(--text-dim); max-width:460px; line-height:1.6; margin-bottom:28px;}
+  
+  .ca-box{
+    display:inline-flex; align-items:center; gap:10px; background:var(--card);
+    border:1.5px solid var(--amber-line); border-radius:12px; padding:12px 14px;
+    font-size:13px; color:var(--text-dim); max-width:100%;
+    animation:caPulse 2.8s ease-in-out infinite;
+  }
+  @keyframes caPulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,167,51,0);}
+    50%{box-shadow:0 0 0 4px rgba(255,167,51,0.08);}
+  }
+  .ca-box b{color:var(--amber); font-weight:700; text-transform:uppercase; font-size:11px; letter-spacing:0.08em; font-family:var(--mono);}
+  .ca-box code{color:var(--text); word-break:break-all; font-family:var(--mono); font-size:12px;}
+  .ca-box button{
+    background:var(--amber-dim); border:1px solid var(--amber-line); color:var(--amber);
+    border-radius:8px; padding:8px 15px; font-size:11px; font-weight:800; cursor:pointer; font-family:var(--heading);
+    text-transform:uppercase; flex-shrink:0; transition:background .15s ease;
+  }
+  .ca-box button:hover{background:var(--amber); color:#1A0E04;}
+
+  /* HERO SCREAM CARD */
+  .hero-scream-outer{position:relative;}
+  .hero-scream-card{
+    background:var(--card);
+    border:2px solid var(--amber-line);
+    clip-path: polygon(0% 2%, 3% 0%, 97% 0%, 100% 3%, 100% 97%, 98% 100%, 2% 100%, 0% 96%);
+    padding:22px; position:relative;
+    animation:cardFloat 4.4s ease-in-out infinite, cardGlow 4.4s ease-in-out infinite;
+  }
+  @keyframes cardFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-7px);}
+  }
+  @keyframes cardGlow{
+    0%,100%{box-shadow:var(--shadow), 0 0 0 0 rgba(255,167,51,0);}
+    50%{box-shadow:var(--shadow), 0 0 32px 2px rgba(255,167,51,0.18);}
+  }
+  .card-topbar{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; padding:0 2px;}
+  .card-topbar .who{display:flex; align-items:center; gap:9px; font-weight:800; font-size:14px; text-transform:uppercase; font-family:var(--heading);}
+  .card-topbar .who img{width:26px; height:26px; border-radius:50%; object-fit:cover; border:1px solid var(--amber-line);}
+  .card-topbar .chain{font-family:var(--mono); font-size:9.5px; color:var(--text-faint); letter-spacing:0.06em; text-transform:uppercase;}
+
+  .scream-visual{
+    position:relative; width:100%; aspect-ratio:1; overflow:hidden; border-radius:14px; margin-bottom:16px;
+    background:#0D0906;
+  }
+  .scream-img-wrap{
+    position:absolute; inset:0; width:100%; height:100%;
+    transition:transform .18s cubic-bezier(.34,1.6,.64,1), filter .18s ease;
+  }
+  .scream-img-wrap img{
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    object-fit:cover; object-position:center; display:block;
+  }
+  .scream-img-wrap.screaming{
+    transform:scale(1.08) rotate(-1deg);
+    filter:saturate(1.4) brightness(1.15);
+  }
+  .scream-img-wrap::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(circle, rgba(255,92,61,0.55) 0%, transparent 70%);
+    opacity:0; transition:opacity .15s ease;
+  }
+  .scream-img-wrap.screaming::after{ opacity:1; animation:screamFlash .55s ease-out; }
+  @keyframes screamFlash{
+    0%{opacity:.9;} 100%{opacity:0;}
+  }
+  @keyframes cardShake{
+    0%,100%{transform:translateY(0) rotate(0);}
+    20%{transform:translate(-3px,1px) rotate(-1deg);}
+    40%{transform:translate(3px,-1px) rotate(1deg);}
+    60%{transform:translate(-2px,1px) rotate(-0.6deg);}
+    80%{transform:translate(2px,-1px) rotate(0.6deg);}
+  }
+  .hero-scream-card.screaming{ animation:cardShake .4s ease; }
+  .scream-btn{width:100%; justify-content:center; font-size:15px;}
+  .scream-counter{margin-top:12px; text-align:center; font-size:11px; color:var(--text-faint); font-family:var(--mono); text-transform:uppercase; letter-spacing:0.04em;}
+
+  /* MARQUEE */
+  .marquee{
+    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); background:var(--bg-alt);
+    padding:13px 0; overflow:hidden; white-space:nowrap; position:relative; z-index:1;
+  }
+  .marquee-track{display:inline-block; animation:scroll 24s linear infinite;}
+  .marquee-track span{display:inline-block; padding:0 20px; font-size:12.5px; font-weight:700; color:var(--text-dim); font-family:var(--mono); text-transform:uppercase; letter-spacing:0.03em;}
+  .marquee-track span b{color:var(--amber);}
+  .marquee-track span::before{content:"★"; color:var(--scream); margin-right:20px; font-size:10px;}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* LORE */
+  .lore-grid{display:grid; grid-template-columns:1fr 0.85fr; gap:48px; align-items:center;}
+  @media (max-width:860px){ .lore-grid{grid-template-columns:1fr; gap:32px;} }
+  .lore-copy h2{margin-bottom:18px;}
+  .lore-copy p{color:var(--text-dim); font-size:15.5px; line-height:1.75; margin-bottom:16px;}
+  .lore-copy strong{color:var(--amber); font-weight:700;}
+  .lore-links{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+  .lore-links a{
+    font-size:12px; font-weight:700; text-transform:uppercase; padding:10px 16px; border:1px solid var(--line);
+    border-radius:8px; color:var(--text-dim); background:var(--card); transition:all .15s ease;
+  }
+  .lore-links a:hover{border-color:var(--amber-line); color:var(--amber);}
+  .proof-card{
+    background:#fff; overflow:hidden; box-shadow:var(--shadow); padding:8px;
+    clip-path: polygon(0% 2%, 3% 0%, 97% 0%, 100% 3%, 100% 97%, 98% 100%, 2% 100%, 0% 96%);
+    transform:rotate(-1.5deg);
+  }
+  .proof-card img{width:100%; display:block;}
+
+  /* FEES CHECKLIST */
+  #fees{background:var(--bg-alt); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .fees-panel{
+    background:linear-gradient(160deg, var(--card) 0%, var(--card-2) 100%);
+    border:1.5px solid var(--amber-line); border-radius:var(--radius-lg);
+    padding:44px; max-width:680px; margin:0 auto;
+    position:relative; overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(255,167,51,0.18);
+  }
+  .fees-panel::before{
+    content:""; position:absolute; top:-40%; right:-20%; width:60%; height:140%;
+    background:radial-gradient(circle, rgba(255,167,51,0.14), transparent 65%);
+    pointer-events:none;
+  }
+  @media (max-width:820px){ .fees-panel{padding:30px 24px;} }
+  .fees-intro{position:relative; z-index:1; margin-bottom:26px;}
+  .fees-intro p{color:var(--text-dim); font-size:15.5px; line-height:1.65;}
+  .checklist{display:flex; flex-direction:column; gap:10px; position:relative; z-index:1;}
+  .check-row{
+    display:flex; align-items:center; gap:16px;
+    background:rgba(19,14,11,0.4); border:1px solid var(--line); border-radius:12px;
+    padding:16px 18px; font-size:15px; font-weight:600; transition:border-color .15s ease, transform .15s ease;
+  }
+  .check-row:hover{border-color:var(--amber-line); transform:translateX(3px);}
+  .check-row .num{
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    width:30px; height:30px; border-radius:8px; background:var(--amber-dim); border:1px solid var(--amber-line);
+    color:var(--amber); font-family:var(--mono); font-size:12px; font-weight:700;
+  }
+  .check-row svg{width:18px; height:18px; flex-shrink:0; stroke:var(--check); fill:none; stroke-width:2.6;}
+
+  /* CONTENT GALLERY */
+  .trenches{background:var(--bg-alt); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .gallery-tabs{display:flex; gap:10px; margin-bottom:28px;}
+  .gallery-tab{
+    padding:11px 22px; border-radius:9px; border:1.5px solid var(--line); background:var(--card);
+    color:var(--text-dim); font-family:var(--heading); font-weight:800; font-size:13px;
+    text-transform:uppercase; letter-spacing:0.02em; cursor:pointer; transition:all .15s ease;
+  }
+  .gallery-tab:hover{border-color:var(--amber-line); color:var(--text);}
+  .gallery-tab.active{background:var(--amber); border-color:var(--amber); color:#1A0E04;}
+  .gallery-panel{display:none;}
+  .gallery-panel.active{display:block;}
+  .tgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  @media (max-width:700px){ .tgrid{grid-template-columns:repeat(2,1fr);} }
+  .tgrid figure{
+    margin:0; position:relative; border-radius:14px; overflow:hidden;
+    border:1px solid var(--line); aspect-ratio:1; background:var(--card);
+  }
+  .tgrid figure::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.6) 100%);
+  }
+  .tgrid img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; filter:saturate(0.95) sepia(0.06);}
+  .tgrid figure:hover img{transform:scale(1.08);}
+  .tgrid figure{transition:transform .3s ease;}
+  .tgrid figure:hover{transform:translateY(-5px);}
+  .tgrid figcaption{
+    position:absolute; bottom:9px; left:9px; z-index:2;
+    font-size:10px; font-weight:700; padding:5px 11px; border-radius:6px;
+    background:rgba(19,14,11,0.85); color:var(--amber-bright); border:1px solid var(--amber-line);
+    font-family:var(--mono); text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .vgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:700px){ .vgrid{grid-template-columns:repeat(2,1fr);} }
+  .vgrid .vtile{
+    position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+    aspect-ratio:9/16; background:#000;
+  }
+  .vgrid video{width:100%; height:100%; object-fit:cover; display:block; background:#000;}
+
+  /* FINAL */
+  .final{text-align:center; padding:110px 0 100px; position:relative; overflow:hidden;}
+  .final h2{font-size:clamp(32px,6.5vw,58px); margin-bottom:16px;}
+  .final h2 .scream{color:var(--amber);}
+  .final p{color:var(--text-dim); font-size:15.5px; max-width:480px; margin:0 auto 30px;}
+  .final .ca-box{margin:0 auto 28px;}
+  .final-ctas{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--line-soft); padding:34px 0; background:var(--bg-alt);}
+  .foot-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:20px;}
+  .foot-brand{display:flex; align-items:center; gap:9px; font-weight:800; font-size:14px; text-transform:uppercase; font-family:var(--heading);}
+  .foot-brand img{width:26px; height:26px; border-radius:7px; object-fit:cover; border:1px solid var(--amber-line);}
+  .foot-links{display:flex; gap:22px; font-size:13px; color:var(--text-dim); flex-wrap:wrap; text-transform:uppercase; font-weight:600;}
+  .foot-links a:hover{color:var(--amber);}
+  .foot-bottom{
+    border-top:1px solid var(--line-soft); padding-top:18px; color:var(--text-faint); font-size:11.5px; line-height:1.6;
+  }
+
+  .copied-toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--amber); color:#1A0E04; font-weight:800; font-size:13px;
+    padding:12px 22px; border-radius:10px; opacity:0; pointer-events:none; transition:all .25s ease;
+    z-index:100; box-shadow:0 15px 40px -10px rgba(255,167,51,0.45); text-transform:uppercase;
+  }
+  .copied-toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <img src="favicon-cat.png" alt="Screaming Cat">
+        <div>Screaming Cat</div>
+      </a>
+      <div class="navlinks">
+        <a href="#lore">lore</a>
+        <a href="#gallery">Content Gallery</a>
+      </div>
+      <div class="navcta">
+        <a class="btn btn-outline" href="https://x.com/ScreamingCatOG" target="_blank" rel="noopener">X</a>
+        <a class="btn btn-primary" href="https://pump.fun/coin/51ag1U85rPhBq4BXnHvTtCHSW9c1B6Ffc9sCH7eE3MYB" target="_blank" rel="noopener">Buy $SCAT</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="wrap">
+      <a href="#lore">lore</a>
+      <a href="#gallery">Content Gallery</a>
+      <a class="btn btn-primary" href="https://pump.fun/coin/51ag1U85rPhBq4BXnHvTtCHSW9c1B6Ffc9sCH7eE3MYB" target="_blank" rel="noopener">Buy $SCAT</a>
+    </div>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="halftone"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">
+        <svg class="paw" viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="7" r="2.4"/><circle cx="12" cy="4.5" r="2.4"/><circle cx="17" cy="7" r="2.4"/><path d="M12 10c-4 0-6.5 2.8-6.5 5.6C5.5 18.4 7.8 20 10 19c1.2-.5 1.9-.5 3 0 2.4 1 4.5-.6 4.5-3.4C17.5 12.8 16 10 12 10z"/></svg>
+        official pfp of r/memes
+      </div>
+      <h1>Billions will <span class="scream">scream</span></h1>
+      <p class="lead">The internet's most iconic screaming cat, finally with a ticker. Every trencher already knows the face. Go on press her button.</p>
+      
+      <div class="ca-box">
+        <b>CA</b>
+        <code id="ca-text">51ag1U85rPhBq4BXnHvTtCHSW9c1B6Ffc9sCH7eE3MYB</code>
+        <button onclick="copyCA()">Copy</button>
+      </div>
+    </div>
+
+    <div class="hero-scream-outer">
+      <div class="hero-scream-card reveal">
+        <div class="card-topbar">
+          <div class="who"><img src="favicon-cat.png" alt="">$SCAT</div>
+          <div class="chain">PUMP.FUN</div>
+        </div>
+        <div class="scream-visual" id="screamVisual">
+          <div class="scream-img-wrap" id="screamImgWrap">
+            <img src="original-screaming-cat.jpg" alt="The original Screaming Cat meme" id="screamImg">
+          </div>
+        </div>
+        <button class="btn btn-primary scream-btn" id="screamBtn" onclick="makeItScream()">Make Her Scream</button>
+        <audio id="catScreamAudio" src="https://archive.org/download/Wilhelm-ScreamSFX/Wilhelm%204.mp3" preload="auto"></audio>
+        <div class="scream-counter">screams triggered: <span id="screamCount">0</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span><b>$SCAT</b> the og meme</span>
+    <span>official pfp of r/memes</span>
+    <span>every trencher relates</span>
+    <span>fees funding buybacks listings community</span>
+    <span><b>$SCAT</b> the og meme</span>
+    <span>official pfp of r/memes</span>
+    <span>every trencher relates</span>
+    <span>fees funding buybacks listings community</span>
+  </div>
+</div>
+
+<section id="lore">
+  <div class="wrap lore-grid">
+    <div class="lore-copy reveal">
+      <div class="eyebrow">the lore</div>
+      <h2>She's older than your favorite coin</h2>
+      <p>Screaming Cat is a true OG meme that has somehow never gotten the proper run it deserves. It's the <strong>official profile picture of r/memes</strong> one of the biggest meme communities on the internet and remains one of the most instantly recognizable cat reaction images ever posted.</p>
+      <p>It's not just a face. It's a meme <strong>every trencher can relate to</strong> and has personally lived through. Green candle, red candle she screams either way.</p>
+      <p>No proper coin has ever done her justice. That changes now.</p>
+      <div class="lore-links">
+        <a href="https://knowyourmeme.com/memes/screaming-cat" target="_blank" rel="noopener">Know Your Meme</a>
+        <a href="http://reddit.com/r/memes/" target="_blank" rel="noopener">r/memes</a>
+        <a href="https://x.com/i/communities/2014245546727481782" target="_blank" rel="noopener">X Community</a>
+      </div>
+    </div>
+    <div class="proof-card reveal">
+      <img src="power-comparison.jpg" alt="Screaming Cat vs Cash Cat power comparison meme">
+    </div>
+  </div>
+</section>
+
+<section id="fees">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">where the fees go</div>
+      <h2>Every fee has a destination</h2>
+    </div>
+    <div class="fees-panel reveal">
+      <div class="fees-intro">
+        <p>A cut of every buy and sell gets routed straight back into $SCAT. Here's exactly where that money lands:</p>
+      </div>
+      <div class="checklist">
+        <div class="check-row"><span class="num">01</span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Buybacks straight off the top</div>
+        <div class="check-row"><span class="num">02</span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Funding new exchange listings</div>
+        <div class="check-row"><span class="num">03</span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Community requests, funded directly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trenches" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">content gallery</div>
+      <h2>Content Gallery</h2>
+      <p>Everything the community has made so far. Grab whatever you need and go post it.</p>
+    </div>
+    <div class="gallery-tabs reveal">
+      <button class="gallery-tab active" data-tab="photos" onclick="switchGalleryTab('photos')">Photos</button>
+      <button class="gallery-tab" data-tab="videos" onclick="switchGalleryTab('videos')">Videos</button>
+    </div>
+    <div class="gallery-panel active reveal" id="gallery-photos">
+      <div class="tgrid">
+      <figure><img src="photo_1_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 1" loading="lazy"></figure>
+      <figure><img src="photo_2_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 2" loading="lazy"></figure>
+      <figure><img src="photo_3_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 3" loading="lazy"></figure>
+      <figure><img src="photo_4_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 4" loading="lazy"></figure>
+      <figure><img src="photo_5_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 5" loading="lazy"></figure>
+      <figure><img src="photo_6_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 6" loading="lazy"></figure>
+      <figure><img src="photo_7_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 7" loading="lazy"></figure>
+      <figure><img src="photo_8_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 8" loading="lazy"></figure>
+      <figure><img src="photo_9_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 9" loading="lazy"></figure>
+      <figure><img src="photo_10_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 10" loading="lazy"></figure>
+      <figure><img src="photo_11_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 11" loading="lazy"></figure>
+      <figure><img src="photo_12_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 12" loading="lazy"></figure>
+      <figure><img src="photo_13_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 13" loading="lazy"></figure>
+      <figure><img src="photo_14_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 14" loading="lazy"></figure>
+      <figure><img src="photo_15_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 15" loading="lazy"></figure>
+      <figure><img src="photo_16_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 16" loading="lazy"></figure>
+      <figure><img src="photo_17_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 17" loading="lazy"></figure>
+      <figure><img src="photo_18_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 18" loading="lazy"></figure>
+      <figure><img src="photo_19_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 19" loading="lazy"></figure>
+      <figure><img src="photo_20_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 20" loading="lazy"></figure>
+      <figure><img src="photo_21_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 21" loading="lazy"></figure>
+      <figure><img src="photo_22_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 22" loading="lazy"></figure>
+      <figure><img src="photo_23_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 23" loading="lazy"></figure>
+      <figure><img src="photo_24_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 24" loading="lazy"></figure>
+      <figure><img src="photo_25_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 25" loading="lazy"></figure>
+      <figure><img src="photo_26_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 26" loading="lazy"></figure>
+      <figure><img src="photo_27_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 27" loading="lazy"></figure>
+      <figure><img src="photo_28_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 28" loading="lazy"></figure>
+      <figure><img src="photo_29_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 29" loading="lazy"></figure>
+      <figure><img src="photo_30_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 30" loading="lazy"></figure>
+      <figure><img src="photo_31_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 31" loading="lazy"></figure>
+      <figure><img src="photo_32_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 32" loading="lazy"></figure>
+      <figure><img src="photo_33_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 33" loading="lazy"></figure>
+      <figure><img src="photo_34_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 34" loading="lazy"></figure>
+      <figure><img src="photo_35_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 35" loading="lazy"></figure>
+      <figure><img src="photo_36_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 36" loading="lazy"></figure>
+      <figure><img src="photo_37_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 37" loading="lazy"></figure>
+      <figure><img src="photo_38_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 38" loading="lazy"></figure>
+      <figure><img src="photo_39_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 39" loading="lazy"></figure>
+      <figure><img src="photo_40_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 40" loading="lazy"></figure>
+      <figure><img src="photo_41_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 41" loading="lazy"></figure>
+      <figure><img src="photo_42_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 42" loading="lazy"></figure>
+      <figure><img src="photo_43_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 43" loading="lazy"></figure>
+      <figure><img src="photo_44_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 44" loading="lazy"></figure>
+      <figure><img src="photo_45_2026-08-06_21-26-51.jpg" alt="Screaming Cat community meme 45" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="gallery-panel reveal" id="gallery-videos">
+      <div class="vgrid">
+      <div class="vtile"><video src="hf_20260806_182047_0e881275-e0ab-4763-aef3-80fe8301a3f2.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="vtile"><video src="hf_20260806_191848_74c984cd-b97e-4243-9ef8-117a4e3f856f.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="vtile"><video src="hf_20260806_200209_f5fe0b90-1227-46ef-894d-8f9555692419.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="vtile"><video src="hf_20260807_022406_9d0222c6-86b0-4be6-b8b1-e5060ec47b69.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="vtile"><video src="hf_20260807_024531_17898d16-3d4d-4576-9083-739d3d4b292e.mp4" controls preload="metadata" playsinline></video></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">last call</div>
+    <h2>Billions will <span class="scream">scream</span></h2>
+    <p>The OG meme finally has a ticker. Don't be the one who missed it.</p>
+    <div class="ca-box">
+      <b>CA</b>
+      <code id="ca-text-2">51ag1U85rPhBq4BXnHvTtCHSW9c1B6Ffc9sCH7eE3MYB</code>
+      <button onclick="copyCA()">Copy</button>
+    </div>
+    <div class="final-ctas">
+      <a class="btn btn-primary" href="https://pump.fun/coin/51ag1U85rPhBq4BXnHvTtCHSW9c1B6Ffc9sCH7eE3MYB" target="_blank" rel="noopener">Buy $SCAT</a>
+      <a class="btn btn-outline" href="https://x.com/ScreamingCatOG" target="_blank" rel="noopener">Follow on X</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-brand"><img src="favicon-cat.png" alt="Screaming Cat">Screaming Cat</div>
+      <div class="foot-links">
+        <a href="https://x.com/i/communities/2014245546727481782" target="_blank" rel="noopener">X Community</a>
+        <a href="http://reddit.com/r/memes/" target="_blank" rel="noopener">r/memes</a>
+        <a href="https://knowyourmeme.com/memes/screaming-cat" target="_blank" rel="noopener">KYM</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      $SCAT is a meme coin with no intrinsic value or expectation of financial return. This is not financial advice. There is no formal team or roadmap this is a community driven experiment. Do your own research and only invest what you can afford to lose.
+    </div>
+  </div>
+</footer>
+
+<div class="copied-toast" id="copiedToast">Copied CA to clipboard</div>
+
+<script>
+let count = 0;
+
+function copyCA() {
+  const caText = document.getElementById('ca-text').innerText;
+  navigator.clipboard.writeText(caText).then(() => {
+    const toast = document.getElementById('copiedToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+
+function switchGalleryTab(tab) {
+  document.querySelectorAll('.gallery-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tab);
+  });
+  document.getElementById('gallery-photos').classList.toggle('active', tab === 'photos');
+  document.getElementById('gallery-videos').classList.toggle('active', tab === 'videos');
+}
+
+function makeItScream() {
+  const audio = document.getElementById('catScreamAudio');
+  const imgWrap = document.getElementById('screamImgWrap');
+  const card = document.querySelector('.hero-scream-card');
+
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(e => console.log('Audio error:', e));
+  }
+
+  if (imgWrap) {
+    imgWrap.classList.remove('screaming');
+    void imgWrap.offsetWidth; // restart animation if clicked rapidly
+    imgWrap.classList.add('screaming');
+    setTimeout(() => imgWrap.classList.remove('screaming'), 550);
+  }
+  if (card) {
+    card.classList.remove('screaming');
+    void card.offsetWidth;
+    card.classList.add('screaming');
+    setTimeout(() => card.classList.remove('screaming'), 450);
+  }
+
+  count++;
+  document.getElementById('screamCount').innerText = count;
+}
+
+// Reveal animations on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Mobile menu toggle
+const burger = document.getElementById('burger');
+const mobilePanel = document.getElementById('mobilePanel');
+if (burger && mobilePanel) {
+  burger.addEventListener('click', () => {
+    mobilePanel.classList.toggle('open');
+  });
+}
+</script>
+
+</body>
+</html>
